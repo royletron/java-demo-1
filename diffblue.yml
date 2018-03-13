@@ -1,7 +1,39 @@
 buildCmd: mvn compile
 testCmd: mvn test
+ignoreExistingCover: true
 cbmcArguments:
-  # Because tic-tac-toe has 9 squares, we need to unwind the loops 10 times
-  # This will be auto-detected in a future version
-  java-max-input-array-length: 10
-  unwind: 10
+  java-mock-class: ["java.security.KeyFactory", "java.security.Signature", "java.util.Date", "java.io.FileReader", "java.nio.file.Files"]
+
+phases:
+-
+  timeout: 1200
+  cbmcArguments:
+    depth: false
+    unwind: 1
+    string-max-length: false
+    string-max-input-length: false
+    java-max-vla-length: 50
+    java-max-input-array-length: 40
+    string-printable: true
+-
+  timeout: 1200
+  cbmcArguments:
+    depth: false
+    unwind: 1
+    string-max-length: false
+    string-max-inpput-length: false
+    java-max-vla-length: 50
+    java-max-input-array-length: 40
+    string-printable: false
+    java-throw-runtime-exceptions: true
+-
+  timeout: 1200
+  cbmcArguments:
+    depth: false
+    unwind: 2
+    string-max-length: false
+    string-max-input-length: false
+    java-max-vla-length: 50
+    java-max-input-array-length: 40
+    string-printable: false
+    java-throw-runtime-exceptions: true
