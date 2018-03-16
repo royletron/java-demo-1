@@ -1,39 +1,42 @@
 buildCmd: mvn compile
 testCmd: mvn test
-ignoreExistingCover: true
+ignoreExistingCoverage: true
 cbmcArguments:
-  java-mock-class: ["java.security.KeyFactory", "java.security.Signature", "java.util.Date", "java.io.FileReader", "java.nio.file.Files", "com.diffblue.javademo.nestedobjects.subpackage.Order"]
-
+  java-mock-class: ["java.security.KeyFactory", "java.security.Signature", "java.util.Date", "java.io.FileReader", "java.nio.file.Files", "java.io.FileInputStream", "java.lang.ProcessBuilder", "java.lang.Process", "java.io.BufferedReader", "java.io.Reader"]
 phases:
 -
-  timeout: 100
+  timeout: 300
   cbmcArguments:
+    verbosity: 10
     depth: false
     unwind: 1
-    string-max-length: false
-    string-max-input-length: false
-    java-max-vla-length: 50
-    java-max-input-array-length: 40
+    string-max-length: 200
+    string-max-input-length: 1
+    java-max-vla-length: 1
+    java-max-input-array-length: 1
     string-printable: true
 -
-  timeout: 100
+  timeout: 300
   cbmcArguments:
+    verbosity: 10
     depth: false
-    unwind: 1
-    string-max-length: false
-    string-max-inpput-length: false
-    java-max-vla-length: 50
-    java-max-input-array-length: 40
+    unwind: 2
+    string-max-length: 300
+    string-max-input-length: 10
+    java-max-vla-length: 1025
+    java-max-input-array-length: 3
     string-printable: false
     java-throw-runtime-exceptions: true
 -
-  timeout: 100
+  timeout: 300
   cbmcArguments:
+    verbosity: 10
     depth: false
     unwind: 2
     string-max-length: false
     string-max-input-length: false
-    java-max-vla-length: 50
-    java-max-input-array-length: 40
+    refine-strings: false
+    java-max-vla-length: 1025
+    java-max-input-array-length: 4
     string-printable: false
     java-throw-runtime-exceptions: true
