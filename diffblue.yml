@@ -5,3 +5,4 @@ cbmcArguments:
   # This will be auto-detected in a future version
   java-max-input-array-length: 10
   unwind: 10
+  use-wrapper: true
