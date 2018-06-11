@@ -6,5 +6,4 @@ cbmcArguments:
   unwind: 10
   depth: 10 
   java-max-vla-length: 10
-  string-max-length: 10  
-  unwind: 10 
+  string-max-length: 10 
