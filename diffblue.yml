@@ -1,3 +1,4 @@
+classpathCmd: mvn dependency:build-classpath -q -Dmdep.outputFile=cp.txt; cat cp.txt
 cbmcArguments:
   java-max-input-array-length: 10 
   unwind: 10
