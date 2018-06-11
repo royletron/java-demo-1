@@ -1,1 +1,1 @@
-classpathCmd: mvn dependency:build-classpath -q -Dmdep.outputFile=cp.txt; cat cp.txt
+buildCmd: mvn compile
