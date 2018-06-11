@@ -1,5 +1,6 @@
 buildCmd: mvn compile 
 testCmd: mvn test
+classpathCmd: mvn clean; mvn -e -X -Dmaven.test.skip=true compile; cd ../results/\ngrep -o -P '\\-classpath .*? ' build_log.txt | awk '{print $2}'
 cbmcArguments:
   java-max-input-array-length: 10 
   unwind: 10
